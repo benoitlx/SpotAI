@@ -1,2 +1,2 @@
 # SpotAI
-A powerfull robot with embedded AI, speech recognition and so more
+A powerfull Robot with embedded AI, Speech Recognition and so more
