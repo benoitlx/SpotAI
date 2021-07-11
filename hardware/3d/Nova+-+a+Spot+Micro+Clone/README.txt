@@ -1,0 +1,1 @@
+Nova - a Spot Micro Clone by cguweb on Thingiverse: https://www.thingiverse.com/thing:4767006
