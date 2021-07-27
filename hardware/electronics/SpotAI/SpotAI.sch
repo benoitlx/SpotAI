@@ -671,28 +671,13 @@ SDA0
 Text GLabel 3400 3800 0    50   Input ~ 0
 SCL0
 Wire Wire Line
-	3400 3700 3600 3700
-Wire Wire Line
-	3400 3800 3650 3800
-Wire Wire Line
-	3600 3700 3600 4250
-Wire Wire Line
 	3600 4250 4000 4250
-Connection ~ 3600 3700
-Wire Wire Line
-	3600 3700 4000 3700
-Wire Wire Line
-	3650 3800 3650 4350
 Wire Wire Line
 	3650 4350 4000 4350
-Connection ~ 3650 3800
-Wire Wire Line
-	3650 3800 4000 3800
 Wire Wire Line
 	3600 4250 3600 4800
 Wire Wire Line
 	3600 4800 4000 4800
-Connection ~ 3600 4250
 Wire Wire Line
 	3650 4350 3650 4900
 Wire Wire Line
@@ -845,4 +830,19 @@ Wire Wire Line
 	9400 2350 9650 2350
 Wire Wire Line
 	9650 2350 9650 2200
+Connection ~ 3650 3700
+Wire Wire Line
+	3650 3700 4000 3700
+Wire Wire Line
+	3650 3700 3650 4350
+Wire Wire Line
+	3400 3800 3600 3800
+Wire Wire Line
+	3400 3700 3650 3700
+Wire Wire Line
+	3600 4250 3600 3800
+Connection ~ 3600 4250
+Connection ~ 3600 3800
+Wire Wire Line
+	3600 3800 4000 3800
 $EndSCHEMATC
