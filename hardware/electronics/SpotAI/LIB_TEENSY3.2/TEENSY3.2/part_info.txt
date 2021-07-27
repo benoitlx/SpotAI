@@ -1,0 +1,9 @@
+Manufacturer=PJRC
+PartNumber=TEENSY3.2
+PartCategory=Integrated Circuit
+PackageCategory=Other
+PinCount=37
+Version=1.2
+Released=2021-02-17 15:57:52
+Downloaded=2021-07-25 14:40:14
+3D=Y
