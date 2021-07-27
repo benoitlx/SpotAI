@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L TEENSY3.2:TEENSY3.2 IC1
+L SpotAI-rescue:TEENSY3.2-TEENSY3.2 IC1
 U 1 1 60FEE192
 P 5850 3550
 F 0 "IC1" H 6500 3815 50  0000 C CNN
@@ -602,21 +602,6 @@ F 3 "~" H 4200 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:VCC #PWR06
-U 1 1 610F23B3
-P 3700 3350
-F 0 "#PWR06" H 3700 3200 50  0001 C CNN
-F 1 "VCC" H 3800 3450 50  0000 C CNN
-F 2 "" H 3700 3350 50  0001 C CNN
-F 3 "" H 3700 3350 50  0001 C CNN
-	1    3700 3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4000 3500 3700 3500
-Wire Wire Line
-	3700 3500 3700 3350
-$Comp
 L power:+3V3 #PWR05
 U 1 1 610F8F7A
 P 3550 3350
@@ -628,7 +613,7 @@ F 3 "" H 3550 3350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3550 3350 3550 4050
+	3550 3350 3550 3500
 Wire Wire Line
 	3550 4600 4000 4600
 Wire Wire Line
@@ -845,4 +830,9 @@ Connection ~ 3600 4250
 Connection ~ 3600 3800
 Wire Wire Line
 	3600 3800 4000 3800
+Wire Wire Line
+	3550 3500 4000 3500
+Connection ~ 3550 3500
+Wire Wire Line
+	3550 3500 3550 4050
 $EndSCHEMATC
