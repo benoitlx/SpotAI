@@ -11,7 +11,7 @@ The teensy software is responsible of the motion and low-level communication wit
 
 ### Setting up the necessary
 
-We will use [PlatformIO](https://docs.platformio.org/en/latest//core/installation.html), in order to compile or to upload code in the teensy. Make sure you have it installed.
+We will use [PlatformIO](https://docs.platformio.org/en/latest//core/installation.html), in order to compile and upload code in the teensy. Make sure you have it installed.
 
 You can run a graphical interface to manage your pio projects by running this command:
 ```bash
