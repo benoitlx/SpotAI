@@ -19,6 +19,11 @@ pio home
 ```
 This start a server on the port 8008 on localhost.
 
+A preconfigured platformio.ini file is available in the software directory you can replace the original one with this one by running this command:
+```bash
+cp platformio.ini [your_project_directory]
+```
+
 To compile your project please run the following command:
 ```bash
 pio run
@@ -27,4 +32,9 @@ pio run
 add this option to upload the code
 ```bash
 -t upload
+```
+
+You can monitor what's going on you teensy with the serial monitor of pio:
+```bash
+pio device monitor
 ```
