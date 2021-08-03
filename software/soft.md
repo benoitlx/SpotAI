@@ -17,4 +17,14 @@ You can run a graphical interface to manage your pio projects by running this co
 ```bash
 pio home
 ```
-This start a server on localhost.
+This start a server on the port 8008 on localhost.
+
+To compile your project please run the following command:
+```bash
+pio run
+```
+
+add this option to upload the code
+```bash
+-t upload
+```
