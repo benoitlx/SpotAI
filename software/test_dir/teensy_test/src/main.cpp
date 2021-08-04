@@ -4,9 +4,12 @@
 #include <tof10120.h>
 
 #define LID_ADR 0x52
+#define LID1_ADR 0x53
 
 MPU6050 mpu(Wire);
+
 TOF10120 lid(Wire, LID_ADR);
+TOF10120 lid1(Wire, LID1_ADR);
 
 long timer = 0;
 
@@ -36,6 +39,9 @@ void loop() {
     Serial.print(lid.readDistance());
     Serial.println(F(" mm"));
 
+    Serial.print(F("DISTANCE1: "));
+    Serial.print(lid1.readDistance());
+    Serial.println(F(" mm"));
 
     Serial.print(F("TEMPERATURE: "));Serial.println(mpu.getTemp());
     Serial.print(F("ACCELERO  X: "));Serial.print(mpu.getAccX());
