@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "Wire.h"
+// #include "Wire.h"
 #include <MPU6050_light.h>
 #include <tof10120.h>
 
@@ -31,16 +31,20 @@ void setup() {
   
 }
 
+
+
 void loop() {
   mpu.update();
+  lid.update();
+  lid1.update();
 
   if(millis() - timer > 250){ // print data every second
     Serial.print(F("DISTANCE: "));
-    Serial.print(lid.readDistance());
+    Serial.print(lid.getDistance());
     Serial.println(F(" mm"));
 
     Serial.print(F("DISTANCE1: "));
-    Serial.print(lid1.readDistance());
+    Serial.print(lid1.getDistance());
     Serial.println(F(" mm"));
 
     Serial.print(F("TEMPERATURE: "));Serial.println(mpu.getTemp());

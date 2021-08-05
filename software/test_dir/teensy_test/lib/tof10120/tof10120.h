@@ -10,14 +10,17 @@
 class TOF10120{
     public:
         TOF10120(TwoWire &w, unsigned char adress);
-        int readDistance();
+        int getDistance();
+        void update();
 
     private:
         TwoWire *wire;
         unsigned char adr;
 
         void readData(unsigned char addr, unsigned char* datbuf, unsigned char cnt);
+        int readDistance();
 
+        int distance;
         unsigned short length=0;
         unsigned char i2c_rx_buf[16];
 };

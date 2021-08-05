@@ -27,3 +27,11 @@ int TOF10120::readDistance(){
 //    delay(150);
     return length;
 }
+
+int TOF10120::getDistance(){
+    return this->distance;
+}
+
+void TOF10120::update(){
+    this->distance = readDistance();
+}
