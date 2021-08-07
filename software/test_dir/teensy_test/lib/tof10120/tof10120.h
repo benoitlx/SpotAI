@@ -18,7 +18,6 @@ class TOF10120{
         unsigned char adr;
 
         void readData(unsigned char addr, unsigned char* datbuf, unsigned char cnt);
-        int readDistance();
 
         int distance;
         unsigned short length=0;

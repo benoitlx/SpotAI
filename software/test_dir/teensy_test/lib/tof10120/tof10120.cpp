@@ -19,19 +19,16 @@ void TOF10120::readData(unsigned char addr, unsigned char* datbuf, unsigned char
     }
 }
 
-int TOF10120::readDistance(){
+void TOF10120::update(){
     this->readData(DT_ADR, i2c_rx_buf, CNT_BYTES);
     length = i2c_rx_buf[0];
     length = length<<8;
     length |= i2c_rx_buf[1];
 //    delay(150);
-    return length;
+    distance = length;
 }
 
 int TOF10120::getDistance(){
     return this->distance;
 }
 
-void TOF10120::update(){
-    this->distance = readDistance();
-}

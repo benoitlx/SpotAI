@@ -4,7 +4,7 @@
 #include <tof10120.h>
 
 #define LID_ADR 0x52
-#define LID1_ADR 0x53
+#define LID1_ADR 0x54
 
 MPU6050 mpu(Wire);
 
