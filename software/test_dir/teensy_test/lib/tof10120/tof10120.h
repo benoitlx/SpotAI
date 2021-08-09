@@ -9,13 +9,13 @@
 
 class TOF10120{
     public:
-        TOF10120(TwoWire &w, unsigned char adress);
+        TOF10120(TwoWire &w, byte adress);
         int getDistance();
         void update();
 
     private:
         TwoWire *wire;
-        unsigned char adr;
+        byte adr;
 
         void readData(unsigned char addr, unsigned char* datbuf, unsigned char cnt);
 
