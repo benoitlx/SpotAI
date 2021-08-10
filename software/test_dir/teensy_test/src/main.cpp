@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <ArduinoJson.h>
 #include "Wire.h"
 #include <Adafruit_PWMServoDriver.h>
 #include <MPU6050_light.h>
@@ -25,6 +26,35 @@ Adafruit_PWMServoDriver driver = Adafruit_PWMServoDriver(DRV_ADR, Wire);
 Servos servo(driver, PWM_FREQ);
 
 long timer = 0;
+
+
+void sendSerial(){
+  StaticJsonDocument<192> data;
+  data[F("dist0")] = lid.getDistance();
+  data[F("dist1")] = lid1.getDistance();
+  data["temp"] = mpu.getTemp();
+
+  JsonObject acc = data.createNestedObject("acc");
+  acc["x"] = mpu.getAccX();
+  acc["y"] = mpu.getAccY();
+  acc["z"] = mpu.getAccZ();
+
+  JsonObject gyro = data.createNestedObject("gyro");
+  gyro["x"] = mpu.getGyroX();
+  gyro["y"] = mpu.getGyroY();
+  gyro["z"] = mpu.getGyroZ();
+
+  JsonObject acc_angle = data.createNestedObject("acc_angle");
+  acc_angle["x"] = mpu.getAccAngleX();
+  acc_angle["y"] = mpu.getAccAngleY();
+
+  JsonObject angle = data.createNestedObject("angle");
+  angle["x"] = mpu.getAngleX();
+  angle["y"] = mpu.getAngleY();
+  angle["z"] = mpu.getAngleZ();
+
+  serializeJson(data, Serial);
+}
 
 
 /* Setup */
@@ -55,36 +85,15 @@ void setup() {
 
 /* Loop */
 
-void loop() {
-  mpu.update();
-  lid.update();
-  lid1.update();
+void loop() { //9.3%
 
   if(millis() - timer > 250){ // print data every second
-    Serial.print(F("DISTANCE: "));
-    Serial.print(lid.getDistance());
-    Serial.println(F(" mm"));
+    mpu.update();
+    lid.update();
+    lid1.update();
 
-    Serial.print(F("DISTANCE1: "));
-    Serial.print(lid1.getDistance());
-    Serial.println(F(" mm"));
+    sendSerial();
 
-    Serial.print(F("TEMPERATURE: "));Serial.println(mpu.getTemp());
-    Serial.print(F("ACCELERO  X: "));Serial.print(mpu.getAccX());
-    Serial.print("\tY: ");Serial.print(mpu.getAccY());
-    Serial.print("\tZ: ");Serial.println(mpu.getAccZ());
-  
-    Serial.print(F("GYRO      X: "));Serial.print(mpu.getGyroX());
-    Serial.print("\tY: ");Serial.print(mpu.getGyroY());
-    Serial.print("\tZ: ");Serial.println(mpu.getGyroZ());
-  
-    Serial.print(F("ACC ANGLE X: "));Serial.print(mpu.getAccAngleX());
-    Serial.print("\tY: ");Serial.println(mpu.getAccAngleY());
-    
-    Serial.print(F("ANGLE     X: "));Serial.print(mpu.getAngleX());
-    Serial.print("\tY: ");Serial.print(mpu.getAngleY());
-    Serial.print("\tZ: ");Serial.println(mpu.getAngleZ());
-    Serial.println(F("=====================================================\n"));
     timer = millis();
   }
 
