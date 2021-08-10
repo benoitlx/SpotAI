@@ -1,5 +1,4 @@
 #include "tof10120.h"
-#include <Arduino.h>
 
 TOF10120::TOF10120(TwoWire &w, unsigned char adress){
     wire = &w;
