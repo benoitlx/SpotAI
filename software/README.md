@@ -7,7 +7,7 @@ The software is made up of two parts:
 
 ## Teensy
 
-The teensy software is responsible of the motion and low-level communication with the sensor.
+The teensy software is responsible for the motion and low-level communication with the sensor.
 
 ### Setting up the necessary
 
